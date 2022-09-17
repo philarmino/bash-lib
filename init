@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Shell Otions
+set -euo pipefail
+
+# Get the relative path to the repo root
+BASH_LIB_DIR_RELATIVE="$(dirname ${BASH_SOURCE[0]})"
+BASH_LIB_DIR="${BASH_LIB_DIR_RELATIVE}"
+export BASH_LIB_DIR
+
+for lib in $(ls ${BASH_LIB_DIR}/*.sh); do 
+  . "${lib}"
+done
